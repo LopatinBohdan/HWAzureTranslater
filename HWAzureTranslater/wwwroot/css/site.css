@@ -1,0 +1,29 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 60px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 30% 10% 30%;
+    grid-gap: 10%;
+}
+
+.box {
+    width:40%;
+    border-radius: 5px;
+}

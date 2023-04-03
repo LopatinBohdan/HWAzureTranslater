@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+   
+        <form method="POST" asp-action="TranslateText">
+        <div class="wrapper">
+            <div class="box">
+           
+                <label>From:</label><br />
+                <select name="from" id="from">
+                    <option>Select</option>
+                    @*@foreach (Language item in ViewBag.Language)
+                    {
+                        <option value="@item.IsoCode">@item.Name</option>
+                    }*@
+                    <option value="en">English</option>
+                    <option value="uk">Ukrainian</option>
+                </select><br /><br />
+                
+                <textarea class="text-body" id="origin" name="origin" cols="34" rows="4"></textarea><br /><br />
+            </div>
+
+
+            <div class="box">
+                <button type="submit" class="btn btn-primary">Text translate</button>
+            </div>
+               
+
+            <div class="box">
+                <label>To:</label><br />
+                <select name="to" id="to">
+                    <option>Select</option>
+                   @* @foreach (Language item in ViewBag.Language)
+                    {
+                        <option value="@item.IsoCode">@item.Name</option>
+                    }*@
+                    <option value="en">English</option>
+                    <option value="uk">Ukrainian</option>
+                </select><br /><br />
+
+                <textarea class="text-body" name="translate" id="translate" cols="40" rows="4" readonly>@ViewBag.Translate</textarea>
+          
+        
+            
+        </div>
+        </div>
+        </form><br /><br />
+
+    <form method="POST" asp-action="TranslateImage">
+        <div class="wrapper">
+            <div class="box">
+                <label>Enter url</label>
+                <input name="imgUrl" class="figure-img" />
+                
+            </div>
+
+            <div class="box">
+                <button type="submit" class="btn btn-primary">Image translate</button>
+            </div>
+
+            <div class="box">
+                <label>To:</label><br />
+                <select name="imgTo" id="imgTo">
+                    <option>Select</option>
+                    @* @foreach (Language item in ViewBag.Language)
+                    {
+                    <option value="@item.IsoCode">@item.Name</option>
+                    }*@
+                    <option value="en">English</option>
+                    <option value="uk">Ukrainian</option>
+                </select><br /><br />
+                <textarea class="text-body" name="imgTranslate" id="imgTranslate" cols="40" rows="4" readonly>@ViewBag.ImgTranslate</textarea>
+            </div>
+        </div>
+
+    </form>
+
+    </div>
+
+
